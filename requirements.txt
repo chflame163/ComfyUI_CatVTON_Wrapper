@@ -1,0 +1,6 @@
+numpy<2.0
+pillow
+Scipy
+diffusers
+accelerate
+transformers>=4.38.2
