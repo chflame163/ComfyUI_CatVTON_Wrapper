@@ -1,0 +1,15 @@
+[project]
+name = "ComfyUI_CatVTON_Wrapper"
+description = "CatVTON warpper for ComfyUI"
+version = "1.0.0"
+license = ""
+dependencies = ["numpy", "pillow", "Scipy", "diffusers", "accelerate", "transformers"]
+
+[project.urls]
+Repository = "https://github.com/chflame163/ComfyUI_CatVTON_Wrapper"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "chflame163"
+DisplayName = "ComfyUI_CatVTON_Wrapper"
+Icon = ""

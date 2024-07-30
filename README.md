@@ -23,11 +23,11 @@ For Aki ComfyUI package, type:
 ```
 ..\..\python\python.exe -s -m pip install -r requirements.txt
 ```
-### Download Modes
-Down model files from [BaiduNetdisk](https://pan.baidu.com/s/1QuIgWF8EnISCnovku9nZ1g?pwd=y0n0 ) and copy to ```ComtyUI/models/CatVTON``` directory. 
+### Download Models
+Download all model files from [BaiduNetdisk](https://pan.baidu.com/s/1QuIgWF8EnISCnovku9nZ1g?pwd=y0n0 ) and copy to ```ComtyUI/models/CatVTON``` directory. 
 
 ### Example Workflow
-The example workflow files in the workflow directory.
+The example workflow files is in the workflow directory.
 
 ### Node Options
 ![image](image/catvton_wrapper_node.jpg)      
