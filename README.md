@@ -1,6 +1,6 @@
 # ComfyUI_CatVTON_Wrapper
 
-Concatenation Is All You Need for Virtual Try-On with Diffusion Models.    
+CatVTON warpper for ComfyUI. fixed the cropping issue of images with different proportions input.    
 
 Original repo: [https://github.com/Zheng-Chong/CatVTON](https://github.com/Zheng-Chong/CatVTON)    
 
@@ -24,7 +24,7 @@ For Aki ComfyUI package, type:
 ..\..\python\python.exe -s -m pip install -r requirements.txt
 ```
 ### Download Models
-Download all model files from [BaiduNetdisk](https://pan.baidu.com/s/1QuIgWF8EnISCnovku9nZ1g?pwd=y0n0 ) and copy to ```ComtyUI/models/CatVTON``` directory. 
+Download all model files from [BaiduNetdisk](https://pan.baidu.com/s/1QuIgWF8EnISCnovku9nZ1g?pwd=y0n0 ) or [GoogleDrive](https://drive.google.com/drive/folders/1TJNNql7UfDPVgHJuItDDjowycN5jpC5o?usp=sharing) and copy to ```ComtyUI/models/CatVTON``` directory. 
 
 ### Example Workflow
 The example workflow files is in the workflow directory.
@@ -40,6 +40,6 @@ The example workflow files is in the workflow directory.
 * steps: The number of steps of sampler.
 * cfg: The cfg strength of the diffusion model.
 
-### statement
+### Statement
 Please refer to the original project license to authorization agreement.
 
