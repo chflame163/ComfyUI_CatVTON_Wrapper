@@ -2,5 +2,5 @@ numpy<2.0
 pillow
 Scipy
 diffusers
-accelerate
+accelerate>=0.30.0
 transformers>=4.38.2
