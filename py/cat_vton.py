@@ -1,4 +1,5 @@
 from .func import *
+from comfy.utils import ProgressBar
 
 NODE_NAME = 'CatVTON_Wrapper'
 
@@ -69,13 +70,15 @@ class LS_CatVTON:
         mask = mask_processor.blur(mask, blur_factor=9)
 
         # Inference
+        comfyui_pbar_update = ProgressBar(total=steps).update
         result_image = pipeline(
             image=person_image,
             condition_image=cloth_image,
             mask=mask,
             num_inference_steps=steps,
             guidance_scale=cfg,
-            generator=generator
+            generator=generator,
+            comfy_pbar_callback=comfyui_pbar_update
         )[0]
 
         result_image = restore_padding_image(result_image, target_image.size, person_image_bbox)

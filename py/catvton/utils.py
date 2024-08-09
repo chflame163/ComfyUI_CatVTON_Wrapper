@@ -79,6 +79,3 @@ def get_trainable_module(unet, trainable_module_name):
         return attn_blocks
     else:
         raise ValueError(f"Unknown trainable_module_name: {trainable_module_name}")
-
-                
-    
