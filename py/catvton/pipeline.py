@@ -21,6 +21,7 @@ from .utils1 import (
     prepare_mask_image,
     resize_and_crop,
     resize_and_padding,
+    call_callback
 )
 
 
@@ -181,6 +182,10 @@ class CatVTONPipeline:
                     and (i + 1) % self.noise_scheduler.order == 0
                 ):
                     progress_bar.update()
+
+                    comfy_pbar_callback = kwargs.get("comfy_pbar_callback", None)
+                    if comfy_pbar_callback is not None:
+                        call_callback(comfy_pbar_callback, 1)
 
         # Decode the final latents
         latents = latents.split(latents.shape[concat_dim] // 2, dim=concat_dim)[0]

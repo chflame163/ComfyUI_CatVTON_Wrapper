@@ -667,3 +667,6 @@ if __name__ == "__main__":
             )
             vis_sobel_weight(image_path, mask_path).save(result_path)
     pass
+
+def call_callback(callback:callable, *args, **kwargs):
+    return callback(*args, **kwargs)
