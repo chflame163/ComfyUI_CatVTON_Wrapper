@@ -1,3 +1,5 @@
+import torch.xpu
+
 from .func import *
 from comfy.utils import ProgressBar
 
@@ -10,6 +12,7 @@ class LS_CatVTON:
 
     @classmethod
     def INPUT_TYPES(cls):
+        # device_list = ['cuda', 'cpu', "mps", "xpu"]
         return {
             "required": {
                 "image": ("IMAGE",),
@@ -20,6 +23,7 @@ class LS_CatVTON:
                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xFFFFFFFFFFFFFFFF}),
                 "steps": ("INT", {"default": 40, "min": 1, "max": 10000}),
                 "cfg": ("FLOAT", {"default": 2.5, "min": 0.0, "max": 14.0, "step": 0.1, "round": 0.01,},),
+                # "device": (device_list,),
             }
         }
 
@@ -30,6 +34,7 @@ class LS_CatVTON:
 
     def catvton(self, image, mask, refer_image, mask_grow, mixed_precision, seed, steps, cfg):
 
+        device = "cuda"
         catvton_path = os.path.join(folder_paths.models_dir, "CatVTON")
         sd15_inpaint_path = os.path.join(catvton_path, "stable-diffusion-inpainting")
 
@@ -45,7 +50,7 @@ class LS_CatVTON:
             attn_ckpt_version="mix",
             weight_dtype=mixed_precision,
             use_tf32=True,
-            device='cuda'
+            device=device
         )
 
         if mask.dim() == 2:
@@ -61,7 +66,7 @@ class LS_CatVTON:
         mask_image = mask_image[0]
         mask_image = to_pil_image(mask_image)
 
-        generator = torch.Generator(device='cuda').manual_seed(seed)
+        generator = torch.Generator(device=device).manual_seed(seed)
         person_image, person_image_bbox = resize_and_padding_image(target_image, (768, 1024))
         cloth_image, _ = resize_and_padding_image(refer_image, (768, 1024))
         mask, _ = resize_and_padding_image(mask_image, (768, 1024))

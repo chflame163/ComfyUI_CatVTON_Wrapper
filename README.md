@@ -4,7 +4,9 @@ CatVTON warpper for ComfyUI. fixed the cropping issue of images with different p
 
 Original repo: [https://github.com/Zheng-Chong/CatVTON](https://github.com/Zheng-Chong/CatVTON)    
 
-![image](workflow/workflow.png)     
+It is recommend use 6G or higher VRAM NVidia GPU device to run.
+
+![image](workflow/catvton_example)     
 
 ### Install Plugin
 Open the cmd window in the plugin directory of ComfyUI, like ComfyUI\custom_nodes，type:
