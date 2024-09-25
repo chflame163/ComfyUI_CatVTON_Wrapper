@@ -1,4 +1,4 @@
-import torch.xpu
+
 
 from .func import *
 from comfy.utils import ProgressBar
