@@ -6,7 +6,7 @@ Original repo: [https://github.com/Zheng-Chong/CatVTON](https://github.com/Zheng
 
 It is recommend use 6G or higher VRAM NVidia GPU device to run.
 
-![image](workflow/catvton_example)     
+![image](workflow/catvton_example.jpg)     
 
 ### Install Plugin
 Open the cmd window in the plugin directory of ComfyUI, like ComfyUI\custom_nodes，type:
